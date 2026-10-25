@@ -20,6 +20,13 @@
 #include "main.h"
 #include "game.h"
 #include <string.h>
+#include "stm32f0xx_hal.h"
+
+
+#define LED_Pin            GPIO_PIN_5
+#define LED_GPIO_Port      GPIOB
+#define BUTTON_Pin         GPIO_PIN_0
+#define BUTTON_GPIO_Port   GPIOA
 
 /* ---------------- Authoritative state ---------------- */
 static GameState   s_state;
@@ -38,6 +45,7 @@ static uint8_t    board_full(const uint8_t *board);
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -53,34 +61,11 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
+  MX_GPIO_Init();
+  
 
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
@@ -218,9 +203,10 @@ void Game_EncodeBoard(char out[GAME_BOARD_CELLS + 1U])
  * ========================================================================== */
 static void reset_board(void)
 {
-    memset(s_board, GAME_PLAYER_NONE, sizeof(s_board));
+    for (size_t i = 0; i < GAME_BOARD_CELLS; i++) {
+        s_board[i] = GAME_PLAYER_NONE;
+    }
 }
-
 static GamePlayer opponent(GamePlayer p)
 {
     return (p == GAME_PLAYER_X) ? GAME_PLAYER_O : GAME_PLAYER_X;
@@ -253,7 +239,22 @@ static uint8_t board_full(const uint8_t *board)
     return 1U;
 }
 
+static void MX_GPIO_Init(void)
+{
+    GPIO_InitTypeDef g = {0};
+    __HAL_RCC_GPIOA_CLK_ENABLE();
 
+    /* LED */
+    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    g.Pin = LED_Pin; g.Mode = GPIO_MODE_OUTPUT_PP;
+    g.Pull = GPIO_NOPULL; g.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(LED_GPIO_Port, &g);
+
+    /* Button */
+    g.Pin = BUTTON_Pin; g.Mode = GPIO_MODE_INPUT;
+    g.Pull = GPIO_PULLUP; g.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(BUTTON_GPIO_Port, &g);
+}
 
 /**
   * @brief System Clock Configuration
