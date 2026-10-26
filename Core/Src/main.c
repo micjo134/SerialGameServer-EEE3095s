@@ -55,25 +55,101 @@ static void MX_GPIO_Init(void);
 
 /* USER CODE END 0 */
 
+#define RUN_GAME_TESTS
+
+#ifdef RUN_GAME_TESTS
+static void Game_SelfTest(void)
+{
+    /* Local win for X */
+    Game_Init();
+    Game_Connect();
+    Game_New();
+    Game_Move(0); Game_Move(3);
+    Game_Move(1); Game_Move(4);
+    Game_Move(2);                                     /* X wins */
+    if (Game_GetState()   != GAME_STATE_GAME_OVER) { while (1) { } }
+    if (Game_GetOutcome() != GAME_OUTCOME_X)       { while (1) { } }
+    if (Game_Move(6)      != GAME_ERR_NOGAME)      { while (1) { } }
+
+    /* Draw */
+    Game_New();
+    static const uint8_t seq[9] = { 0,1,2, 4,3,5, 7,6,8 };
+    for (uint8_t i = 0; i < 9U; i++) {
+        if (Game_Move(seq[i]) != GAME_OK) { while (1) { } }
+    }
+    if (Game_GetOutcome() != GAME_OUTCOME_DRAW) { while (1) { } }
+
+    /* Leave the engine in a clean, connected, idle state for the real app. */
+    Game_Init();
+    Game_Connect();
+}
+#endif
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
-  HAL_Init();
-  SystemClock_Config();
-  MX_GPIO_Init();
-  
+    HAL_Init();
+    SystemClock_Config();
+    MX_GPIO_Init();
 
-  while (1)
-  {
-    /* USER CODE END WHILE */
+    Game_Init();
+    #ifdef RUN_GAME_TESTS
+    Game_SelfTest();
+    #else
+        Game_Connect();
+    #endif
 
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
+    uint32_t t_blink = 0U;
+    uint32_t t_btn   = 0U;
+
+    while (1)
+    {
+        /* ---- LED -----------------------------------------------------------
+         * solid ON  = X to move
+         * solid OFF = O to move
+         * 2 Hz blink = GAME_OVER
+         */
+        switch (Game_GetState()) {
+        case GAME_STATE_IN_PROGRESS:
+            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin,
+                              (Game_GetTurn() == GAME_PLAYER_X) ? GPIO_PIN_SET
+                                                                : GPIO_PIN_RESET);
+            break;
+
+        case GAME_STATE_GAME_OVER: {
+            uint32_t now = HAL_GetTick();
+            if ((now - t_blink) >= 250U) {
+                t_blink = now;
+                HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+            }
+            break;
+        }
+
+        default: /* IDLE */
+            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+            break;
+        }
+
+        /* ---- On-board button (active-low, pull-up) : local NEW ---------- */
+        if (HAL_GPIO_ReadPin(BUTTON_GPIO_Port, BUTTON_Pin) == GPIO_PIN_RESET) {
+            uint32_t now = HAL_GetTick();
+            if ((now - t_btn) >= 200U) {           /* debounce */
+                t_btn = now;
+                if (Game_IsConnected()) {
+                    if (Game_GetState() == GAME_STATE_IN_PROGRESS) {
+                        (void)Game_Resign();       /* abandon first */
+                    }
+                    (void)Game_New();
+                }
+            }
+            /* Blocking wait for release, so a held button == one NEW */
+            while (HAL_GPIO_ReadPin(BUTTON_GPIO_Port, BUTTON_Pin) == GPIO_PIN_RESET) { }
+        }
+    }
 }
+
 
 /* ==========================================================================
  * Lifecycle
@@ -243,6 +319,7 @@ static void MX_GPIO_Init(void)
 {
     GPIO_InitTypeDef g = {0};
     __HAL_RCC_GPIOA_CLK_ENABLE();
+    __HAL_RCC_GPIOB_CLK_ENABLE();
 
     /* LED */
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
