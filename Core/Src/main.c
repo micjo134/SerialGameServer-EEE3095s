@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "game.h"
+#include "hardware.h"
 #include "stm32f0xx_hal.h"
 #include <string.h>
 #include <stdio.h>
@@ -68,15 +69,6 @@ static volatile uint16_t tx_tail = 0U;  /* read  index (TX ISR)               */
 static volatile uint8_t  tx_busy = 0U;  /* 1 = Transmit_IT already in flight  */
 
 /* --------------------------------------------------------------------------
- * Game engine — private state
- * -------------------------------------------------------------------------- */
-static GameState   s_state;
-static GamePlayer  s_turn;
-static GameOutcome s_outcome;
-static uint8_t     s_board[GAME_BOARD_CELLS];
-static uint8_t     s_connected;
-
-/* --------------------------------------------------------------------------
  * Private function prototypes
  * -------------------------------------------------------------------------- */
 void SystemClock_Config(void);
@@ -88,15 +80,10 @@ static void MX_USART1_UART_Init(void);
 static void UART_SendString(const char *msg);
 static void dispatch(const char *line);
 
-/* game engine helpers */
-static void       reset_board(void);
-static GamePlayer opponent(GamePlayer p);
-static GamePlayer find_winner(const uint8_t *board);
-static uint8_t    board_full(const uint8_t *board);
-
 /* ==========================================================================
  * main()
  * ========================================================================== */
+#ifndef TEST
 int main(void)
 {
     HAL_Init();
@@ -164,8 +151,7 @@ int main(void)
         switch (Game_GetState())
         {
         case GAME_STATE_IN_PROGRESS:
-            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin,
-                (Game_GetTurn() == GAME_PLAYER_X) ? GPIO_PIN_SET : GPIO_PIN_RESET);
+            led_game_set((Game_GetTurn() == GAME_PLAYER_X) ? 1U : 0U);
             break;
 
         case GAME_STATE_GAME_OVER:
@@ -173,18 +159,19 @@ int main(void)
             uint32_t now = HAL_GetTick();
             if ((now - t_blink) >= 250U) {
                 t_blink = now;
-                HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+                led_game_toggle();
             }
             break;
         }
 
         default: /* IDLE */
-            HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+            led_game_set(0U);
             break;
         }
 
     }
 }
+#endif /* TEST */
 
 /* ==========================================================================
  * UART — transport layer
@@ -425,158 +412,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 }
 
-/* ==========================================================================
- * Game engine — lifecycle
- * ========================================================================== */
-void Game_Init(void)
-{
-    s_connected = 0U;
-    s_state     = GAME_STATE_IDLE;
-    s_turn      = GAME_PLAYER_X;
-    s_outcome   = GAME_OUTCOME_NONE;
-    reset_board();
-}
 
-/* ==========================================================================
- * Game engine — commands
- * All state mutation happens AFTER full validation.
- * ========================================================================== */
-GameStatus Game_Connect(void)
-{
-    /* If already connected, do a clean reset before reconnecting */
-    if (s_connected)  return GAME_ERR_BADCMD;
-    s_connected = 1U;
-    s_state     = GAME_STATE_IDLE;
-    HAL_GPIO_WritePin(LED_CONN_Port, LED_CONN_Pin, GPIO_PIN_SET);
-    return GAME_OK;
-}
-
-GameStatus Game_Disconnect(void)
-{
-    if (!s_connected) return GAME_ERR_BADCMD;   /* not connected */
-
-    s_connected = 0U;
-    s_state     = GAME_STATE_IDLE;
-    s_turn      = GAME_PLAYER_X;
-    s_outcome   = GAME_OUTCOME_NONE;
-    reset_board();
-    HAL_GPIO_WritePin(LED_CONN_Port, LED_CONN_Pin, GPIO_PIN_RESET); /* LED OFF */
-    return GAME_OK;
-}
-
-GameStatus Game_New(void)
-{
-    if (!s_connected)                      return GAME_ERR_BADCMD;
-    if (s_state == GAME_STATE_IN_PROGRESS) return GAME_ERR_BADCMD;
-    reset_board();
-    s_turn    = GAME_PLAYER_X;
-    s_outcome = GAME_OUTCOME_NONE;
-    s_state   = GAME_STATE_IN_PROGRESS;
-    return GAME_OK;
-}
-
-GameStatus Game_Move(uint8_t idx)
-{
-    if (!s_connected)                      return GAME_ERR_BADCMD;
-    if (s_state != GAME_STATE_IN_PROGRESS) return GAME_ERR_NOGAME;
-    if (idx >= GAME_BOARD_CELLS)           return GAME_ERR_RANGE;
-    if (s_board[idx] != GAME_PLAYER_NONE)  return GAME_ERR_OCCUPIED;
-
-    s_board[idx] = (uint8_t)s_turn;
-
-    GamePlayer w = find_winner(s_board);
-    if (w != GAME_PLAYER_NONE) {
-        s_outcome = (w == GAME_PLAYER_X) ? GAME_OUTCOME_X : GAME_OUTCOME_O;
-        s_state   = GAME_STATE_GAME_OVER;
-        s_turn    = GAME_PLAYER_NONE;
-        return GAME_OK;
-    }
-    if (board_full(s_board)) {
-        s_outcome = GAME_OUTCOME_DRAW;
-        s_state   = GAME_STATE_GAME_OVER;
-        s_turn    = GAME_PLAYER_NONE;
-        return GAME_OK;
-    }
-
-    s_turn = opponent(s_turn);
-    return GAME_OK;
-}
-
-GameStatus Game_Resign(void)
-{
-    if (!s_connected || s_state != GAME_STATE_IN_PROGRESS)
-        return GAME_ERR_NOGAME;
-    GamePlayer w = opponent(s_turn);
-    s_outcome = (w == GAME_PLAYER_X) ? GAME_OUTCOME_X : GAME_OUTCOME_O;
-    s_state   = GAME_STATE_GAME_OVER;
-    s_turn    = GAME_PLAYER_NONE;
-    return GAME_OK;
-}
-
-GameStatus Game_State(void)
-{
-    return s_connected ? GAME_OK : GAME_ERR_BADCMD;
-}
-
-/* ==========================================================================
- * Game engine — queries
- * ========================================================================== */
-GameState   Game_GetState(void)    { return s_state; }
-GamePlayer  Game_GetTurn(void)     { return s_turn; }
-GameOutcome Game_GetOutcome(void)  { return s_outcome; }
-uint8_t     Game_IsConnected(void) { return s_connected; }
-
-void Game_EncodeBoard(char out[GAME_BOARD_CELLS + 1U])
-{
-    for (uint8_t i = 0U; i < GAME_BOARD_CELLS; i++) {
-        switch ((GamePlayer)s_board[i]) {
-        case GAME_PLAYER_X: out[i] = 'X'; break;
-        case GAME_PLAYER_O: out[i] = 'O'; break;
-        default:            out[i] = '.'; break;
-        }
-    }
-    out[GAME_BOARD_CELLS] = '\0';
-}
-
-/* ==========================================================================
- * Game engine — internal helpers
- * ========================================================================== */
-static void reset_board(void)
-{
-    for (uint8_t i = 0U; i < GAME_BOARD_CELLS; i++) {
-        s_board[i] = GAME_PLAYER_NONE;
-    }
-}
-
-static GamePlayer opponent(GamePlayer p)
-{
-    return (p == GAME_PLAYER_X) ? GAME_PLAYER_O : GAME_PLAYER_X;
-}
-
-static GamePlayer find_winner(const uint8_t *board)
-{
-    static const uint8_t lines[8][3] = {
-        {0,1,2}, {3,4,5}, {6,7,8},   /* rows      */
-        {0,3,6}, {1,4,7}, {2,5,8},   /* columns   */
-        {0,4,8}, {2,4,6}              /* diagonals */
-    };
-    for (uint8_t i = 0U; i < 8U; i++) {
-        GamePlayer a = (GamePlayer)board[lines[i][0]];
-        if (a != GAME_PLAYER_NONE &&
-            a == (GamePlayer)board[lines[i][1]] &&
-            a == (GamePlayer)board[lines[i][2]])
-            return a;
-    }
-    return GAME_PLAYER_NONE;
-}
-
-static uint8_t board_full(const uint8_t *board)
-{
-    for (uint8_t i = 0U; i < GAME_BOARD_CELLS; i++) {
-        if (board[i] == GAME_PLAYER_NONE) return 0U;
-    }
-    return 1U;
-}
 
 /* ==========================================================================
  * Hardware initialisation

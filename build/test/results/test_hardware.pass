@@ -1,0 +1,43 @@
+---
+:source:
+  :file: test/test_hardware.c
+  :dirname: test
+  :basename: test_hardware.c
+:successes:
+- :test: test_sensor_read_should_return_1_when_pin_is_high
+  :line: 31
+  :message: ''
+  :unity_test_time: 0
+- :test: test_sensor_read_should_return_0_when_pin_is_low
+  :line: 43
+  :message: ''
+  :unity_test_time: 0
+- :test: test_led_conn_set_should_set_pin_when_state_is_1
+  :line: 55
+  :message: ''
+  :unity_test_time: 0
+- :test: test_led_conn_set_should_reset_pin_when_state_is_0
+  :line: 65
+  :message: ''
+  :unity_test_time: 0
+- :test: test_led_game_set_should_set_pin_when_state_is_1
+  :line: 75
+  :message: ''
+  :unity_test_time: 0
+- :test: test_led_game_set_should_reset_pin_when_state_is_0
+  :line: 85
+  :message: ''
+  :unity_test_time: 0
+- :test: test_led_game_toggle_should_toggle_pin
+  :line: 95
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 7
+  :passed: 7
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.1773077999969246

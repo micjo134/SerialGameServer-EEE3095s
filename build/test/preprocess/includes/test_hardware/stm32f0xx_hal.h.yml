@@ -1,0 +1,7 @@
+---
+- type: system
+  filepath: C:/MinGW/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h
+  include_path: stdint.h
+- type: system
+  filepath: C:/MinGW/x86_64-w64-mingw32/include/stdint.h
+  include_path: stdint.h

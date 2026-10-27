@@ -1,0 +1,7 @@
+---
+- type: bare
+  filepath: unity.h
+- type: bare
+  filepath: mock_hardware.h
+- type: bare
+  filepath: game.h

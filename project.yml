@@ -1,0 +1,85 @@
+---
+# =========================================================================
+# Ceedling Project Configuration
+# =========================================================================
+
+:project:
+  :use_exceptions: FALSE
+  :use_test_preprocessor: :all
+  :use_auxiliary_dependencies: TRUE
+  :build_root: build
+  :default_tasks:
+    - test:all
+
+:test_build:
+  :use_assembly: FALSE
+
+:release_build:
+  :output: SerialGameServer.out
+  :use_assembly: FALSE
+
+:environment:
+
+:extension:
+  :executable: .out
+
+:paths:
+  :test:
+    - +:test/**
+    - -:test/support
+  :source:
+    - Core/Src/**
+  :include:
+    - Core/Inc/**
+    - test/support/**
+  :support:
+    - test/support
+
+:files:
+  :source:
+    - -:Core/Src/main.c
+    - -:Core/Src/stm32f0xx_it.c
+    - -:Core/Src/stm32f0xx_hal_msp.c
+    - -:Core/Src/syscalls.c
+    - -:Core/Src/sysmem.c
+    - -:Core/Src/system_stm32f0xx.c
+
+:defines:
+  :common: &common_defines []
+  :test:
+    - *common_defines
+    - TEST
+    - STM32F051x8
+    - USE_HAL_DRIVER
+  :test_preprocess:
+    - *common_defines
+    - TEST
+    - STM32F051x8
+    - USE_HAL_DRIVER
+
+:cmock:
+  :when_no_prototypes: :warn
+  :enforce_strict_ordering: TRUE
+  :mock_prefix: mock_
+  :when_ptr: :compare_ptr
+  :treat_as:
+    uint8:    HEX8
+    uint16:   HEX16
+    uint32:   UINT32
+    int8:     INT8
+    int16:    INT16
+    int32:    INT
+  :includes:
+    - <stdbool.h>
+    - <stdint.h>
+  :plugins:
+    - :ignore
+    - :callback
+    - :expect_any_args
+  :treat_as_void:
+    - void
+
+:plugins:
+  :load_paths: []
+  :enabled:
+    - module_generator

@@ -1,0 +1,71 @@
+---
+:source:
+  :file: test/test_game.c
+  :dirname: test
+  :basename: test_game.c
+:successes:
+- :test: test_game_init_should_set_idle_state_and_not_connected
+  :line: 24
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_connect_should_succeed_and_set_connection_led
+  :line: 35
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_connect_should_fail_if_already_connected
+  :line: 49
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_disconnect_should_reset_state_and_clear_led
+  :line: 62
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_new_should_start_game_in_progress_with_turn_X
+  :line: 78
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_new_should_fail_if_game_already_in_progress
+  :line: 93
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_alternate_turns
+  :line: 107
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_reject_out_of_range_index
+  :line: 127
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_reject_occupied_cell
+  :line: 141
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_detect_row_win_for_player_x
+  :line: 156
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_detect_diagonal_win
+  :line: 178
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_move_should_detect_draw
+  :line: 199
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_resign_should_make_opponent_winner
+  :line: 230
+  :message: ''
+  :unity_test_time: 0
+- :test: test_game_encode_board_format
+  :line: 247
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 14
+  :passed: 14
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.3877887999988161

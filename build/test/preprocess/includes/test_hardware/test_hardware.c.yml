@@ -1,0 +1,7 @@
+---
+- type: bare
+  filepath: unity.h
+- type: bare
+  filepath: mock_stm32f0xx_hal.h
+- type: bare
+  filepath: hardware.h

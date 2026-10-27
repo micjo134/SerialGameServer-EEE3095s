@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "hash_algorithm": "sha256",
+  "entries": {
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/build_directives/test_hardware/test_hardware.c.yml": {
+      "self_hash": "822d15666da42cf4151b5d7b542169c15051b1c7a3c1a86595bd43ec3723c710",
+      "meta_hash": null,
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/includes/test_hardware/test_hardware.c.yml": {
+      "self_hash": "4c4a01282c8e785ca61e1aba873c44f52072a4e04022cd71de5e9789da39376e",
+      "meta_hash": "ff2761e4a1fb4be829e59fe2ef9e92874e34185dd95532c20cf0ec359c1a5d24",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/directives_only/raw/test_hardware.c": {
+      "self_hash": "abb08ae70fb212020d617329518446bd9aa7368820d17eeff6a530892b4fab3b",
+      "meta_hash": "6873f6db076d5f1960969d3a5f9c3ef735cf641a8eb5328a3d247a6dafb31168",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/directives_only/test_hardware.c": "131373dbc29d592c0bfcec1381ed063a3b7398b9413fbaaddbb409d03f4a8be8"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/stm32f0xx_hal.h": {
+      "self_hash": "62b71a956964831f1c787f36458fcb9afdab208e985225b8a57b9599bbad4333",
+      "meta_hash": "fa42ccd8753df9698d81287c98f27a90a86517e4f60cb96953a0c67a5cd6ad52",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.c": {
+      "self_hash": "e0001c0fca5ed2dad526e3e1f125ab4a3acca71b56de92daa0ea0f0a32f3db68",
+      "meta_hash": "6971a91359e32d475fe21cd9d28850540b9f6c219ed446074a118da59b731139",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/stm32f0xx_hal.h": "62b71a956964831f1c787f36458fcb9afdab208e985225b8a57b9599bbad4333"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.h": "eaa8334ecc6b14402260dee161857ad71106b9af8a2932f4bb664005688e0b81"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/test_hardware.c": {
+      "self_hash": "023f95f76494caf6535613bb313e1c87d59adc0a61aeb0dde112c21fe5a85497",
+      "meta_hash": "cdc188af3d7e1bcc934f3a38c97498eba6b67ae04a063f62ef98047aabff3833",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/build_directives/test_hardware/test_hardware.c_source_files.yml": "822d15666da42cf4151b5d7b542169c15051b1c7a3c1a86595bd43ec3723c710"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/runners/test_hardware_runner.c": {
+      "self_hash": "14a9f87c655c9ac8cf715df553c7214e85da6fcbb35fa226eaade159f06ba56e",
+      "meta_hash": "d38b8f64d2a35bd64c4d4b2f1e11d31d7886da8617ffd222b06df47e1c0c5b5a",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_hardware/test_hardware.c": "023f95f76494caf6535613bb313e1c87d59adc0a61aeb0dde112c21fe5a85497"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware.o": {
+      "self_hash": "64b0957827c608d89fb86ddded33be76c175e3a6f7fe130056e1a6eac3f2f27c",
+      "meta_hash": "0c869da9e8d7d83ed7966c24a9613b419093a197252ed5774a24010444d72494",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_hardware.c": "b9393f2314d97537a0cef17898cbff70d36cd8cfa7ba23b892a1158022c7ea29",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.h": "eaa8334ecc6b14402260dee161857ad71106b9af8a2932f4bb664005688e0b81",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/hardware.o": {
+      "self_hash": "960cb51fdd3842ac422c68284743cb4b19dd12a0aa74f3e213f0c8fa88c27167",
+      "meta_hash": "0c869da9e8d7d83ed7966c24a9613b419093a197252ed5774a24010444d72494",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Src/hardware.c": "b94a3f25da309e85658afd89121cb46f2e3a9e793fb674dd92bf546cc6fdd237",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/main.h": "ef067e8a4e2e9040720af5e7cb8d1e3d9360d46a3debf11da9771bb0104293c8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/mock_stm32f0xx_hal.o": {
+      "self_hash": "18e7b19a0b1adce6db19b23969c83e36507809acd2d4ad649ffede3deebfef08",
+      "meta_hash": "0c869da9e8d7d83ed7966c24a9613b419093a197252ed5774a24010444d72494",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.c": "e0001c0fca5ed2dad526e3e1f125ab4a3acca71b56de92daa0ea0f0a32f3db68",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.h": "eaa8334ecc6b14402260dee161857ad71106b9af8a2932f4bb664005688e0b81",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware_runner.o": {
+      "self_hash": "a253a6ba34708038484d412d6d2cf0dadde4d0dba4f044484cd95967914273e8",
+      "meta_hash": "0c869da9e8d7d83ed7966c24a9613b419093a197252ed5774a24010444d72494",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/runners/test_hardware_runner.c": "14a9f87c655c9ac8cf715df553c7214e85da6fcbb35fa226eaade159f06ba56e",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_hardware/mock_stm32f0xx_hal.h": "eaa8334ecc6b14402260dee161857ad71106b9af8a2932f4bb664005688e0b81",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/support/stm32f0xx_hal.h": "d29e623d6fbe3c31759ea4f8ad9b66729f9973edc7d2f0da9369f18e7c2eb155"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/unity.o": {
+      "self_hash": "c31f1190f5c39f84bb981e3a17935fb6c053f79dd377be685fb8a87ffa17379e",
+      "meta_hash": "bdca5bf24ab8872e279db9dc83a1c06c36de33f6b3925e8d67349c08f3650a3d",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.c": "c9b35a0467e3b2d4ea2ddb86925c322a67a2922aa1a48f732d1dc1237a5b998b",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/cmock.o": {
+      "self_hash": "3783d64452f37e9c4a886c5c250ee9f5fd4816e6ee123bd0b7966dfa6e239fa1",
+      "meta_hash": "8bb9ee64e6cc9780e7e7c56d81508249d68b7d3a33d61102efacb41a392704eb",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.c": "c22d8c6cf40dcef1648040288865a059fb23d1aeb81c034f4393032117c1540a",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware.out": {
+      "self_hash": "8d254e0d71c7a29d8c9a6cad408ae52e3de9d3a3d5ce9f15b144a3bc05391973",
+      "meta_hash": "dd01b751231f1102e18906a8a250391557f481bbb1084fb4cbb2146423c327ee",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware.o": "64b0957827c608d89fb86ddded33be76c175e3a6f7fe130056e1a6eac3f2f27c",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/hardware.o": "960cb51fdd3842ac422c68284743cb4b19dd12a0aa74f3e213f0c8fa88c27167",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/mock_stm32f0xx_hal.o": "18e7b19a0b1adce6db19b23969c83e36507809acd2d4ad649ffede3deebfef08",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware_runner.o": "a253a6ba34708038484d412d6d2cf0dadde4d0dba4f044484cd95967914273e8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/unity.o": "c31f1190f5c39f84bb981e3a17935fb6c053f79dd377be685fb8a87ffa17379e",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/cmock.o": "3783d64452f37e9c4a886c5c250ee9f5fd4816e6ee123bd0b7966dfa6e239fa1"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/results/test_hardware.fixture_run": {
+      "self_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meta_hash": "52e4128d1dabd74dbcb4f16789ec44fd90e8d4e66053a9c2e9a5b87e822dbd58",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_hardware/test_hardware.out": "8d254e0d71c7a29d8c9a6cad408ae52e3de9d3a3d5ce9f15b144a3bc05391973"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/results/test_hardware.pass": "de8b97c1ab9f804b4252903efd9ea8a0b19626ca6f249421ccb991405e9560a2"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/build_directives/test_game/test_game.c.yml": {
+      "self_hash": "822d15666da42cf4151b5d7b542169c15051b1c7a3c1a86595bd43ec3723c710",
+      "meta_hash": null,
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/includes/test_game/test_game.c.yml": {
+      "self_hash": "ac9acb9f621476ff8574ea54b92c9be70014ca0b8985ada30a9935f47568b98e",
+      "meta_hash": "34422cc73e45fd623d42f8fc21a258dbe1807f1b532551f00ec5e23029fc63e6",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/directives_only/raw/test_game.c": {
+      "self_hash": "a9ef7a3af5db7f514d9b5e6caed54e11fa663f65a7c092b654f224268cdfa54e",
+      "meta_hash": "52a923b987fa0934906cf00894914491e99fdc108d4fa739170ae7220b7dfef4",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/game.h": "5a01a9e794545c5c5b89fd1d0eefc9c4489e0006c8bf59cc1599287df175c9a9"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/directives_only/test_game.c": "df80de00843f2870855919100f373aecfbcf8b550cf2355c95311fb3abd4708b"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/hardware.h": {
+      "self_hash": "102f91da0b1728250bbaabf573392c1c1edc7389ab007b49baef93808ffbd9fd",
+      "meta_hash": "2bb861836cde5ace481234bbce7de11b05f30cb96d6745ab8bf42fc26abb3855",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.c": {
+      "self_hash": "93911c9c1c1a76ea0645caef71b3930adc13cf4fe1d2d2e8531598db2dc4dc2c",
+      "meta_hash": "6971a91359e32d475fe21cd9d28850540b9f6c219ed446074a118da59b731139",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/hardware.h": "102f91da0b1728250bbaabf573392c1c1edc7389ab007b49baef93808ffbd9fd"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.h": "8f00223b1fec557d234c7ebe8828b345cb3b1ca62f4dcdc39df99ee1168b9b1c"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/test_game.c": {
+      "self_hash": "8e87730a16145fcbd026f826ca6e1393bff177cb3bb8026c5915cb84b45f3561",
+      "meta_hash": "6a709476758161f87a717c277571585818daf3605cdfc181ac65166bb0085bfd",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/game.h": "5a01a9e794545c5c5b89fd1d0eefc9c4489e0006c8bf59cc1599287df175c9a9"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/build_directives/test_game/test_game.c_source_files.yml": "822d15666da42cf4151b5d7b542169c15051b1c7a3c1a86595bd43ec3723c710"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/runners/test_game_runner.c": {
+      "self_hash": "b362db8739ca3f51a31173a151ab0b9f4c57419d78c2513d7117c1e7cc0dd7f5",
+      "meta_hash": "10538c5220af197a0dc7c90759248fedc32e12f8dfcdf88ad64bdd4121e4c5ee",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/preprocess/files/test_game/test_game.c": "8e87730a16145fcbd026f826ca6e1393bff177cb3bb8026c5915cb84b45f3561"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game.o": {
+      "self_hash": "21b080d332bf3a365e56419b789cea1a00688219015e6f54691b957d0396bf8e",
+      "meta_hash": "f4a23f3fdc7cfef7771a10dcd09ac03b8a43000a6093dabd3dd87e6c1fbc7b78",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/test/test_game.c": "829f0ed55f2376ae87a6147f2d711193f877cc293f77559debae6bdfddf9d190",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.h": "8f00223b1fec557d234c7ebe8828b345cb3b1ca62f4dcdc39df99ee1168b9b1c",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/game.h": "5a01a9e794545c5c5b89fd1d0eefc9c4489e0006c8bf59cc1599287df175c9a9"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/game.o": {
+      "self_hash": "675405d3f2ca9167ccc34d26923dc29917c840cd76010c3810ac5a1d3109750f",
+      "meta_hash": "f4a23f3fdc7cfef7771a10dcd09ac03b8a43000a6093dabd3dd87e6c1fbc7b78",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Src/game.c": "35b2df8e531a34ea4f9bd99355f125433606e5724ba6a01574132f35eb7be133",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/game.h": "5a01a9e794545c5c5b89fd1d0eefc9c4489e0006c8bf59cc1599287df175c9a9",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/mock_hardware.o": {
+      "self_hash": "0d66396328867b744d4b942c1efa4cb589eb3e5e3fb28b38161fe028ba7902b7",
+      "meta_hash": "f4a23f3fdc7cfef7771a10dcd09ac03b8a43000a6093dabd3dd87e6c1fbc7b78",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.c": "93911c9c1c1a76ea0645caef71b3930adc13cf4fe1d2d2e8531598db2dc4dc2c",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.h": "8f00223b1fec557d234c7ebe8828b345cb3b1ca62f4dcdc39df99ee1168b9b1c",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game_runner.o": {
+      "self_hash": "d11de91782a75e37ab28032893e804cc1bafbed176c41ad023a705abd2ef0d49",
+      "meta_hash": "f4a23f3fdc7cfef7771a10dcd09ac03b8a43000a6093dabd3dd87e6c1fbc7b78",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/runners/test_game_runner.c": "b362db8739ca3f51a31173a151ab0b9f4c57419d78c2513d7117c1e7cc0dd7f5",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/game.h": "5a01a9e794545c5c5b89fd1d0eefc9c4489e0006c8bf59cc1599287df175c9a9",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/mocks/test_game/mock_hardware.h": "8f00223b1fec557d234c7ebe8828b345cb3b1ca62f4dcdc39df99ee1168b9b1c",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Inc/hardware.h": "88bb076fa5ecb95dd5ad59c6e4647f80c2c7171f3a42d507a3c19a36d94c0762"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/unity.o": {
+      "self_hash": "c31f1190f5c39f84bb981e3a17935fb6c053f79dd377be685fb8a87ffa17379e",
+      "meta_hash": "bdca5bf24ab8872e279db9dc83a1c06c36de33f6b3925e8d67349c08f3650a3d",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.c": "c9b35a0467e3b2d4ea2ddb86925c322a67a2922aa1a48f732d1dc1237a5b998b",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/cmock.o": {
+      "self_hash": "3783d64452f37e9c4a886c5c250ee9f5fd4816e6ee123bd0b7966dfa6e239fa1",
+      "meta_hash": "8bb9ee64e6cc9780e7e7c56d81508249d68b7d3a33d61102efacb41a392704eb",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.c": "c22d8c6cf40dcef1648040288865a059fb23d1aeb81c034f4393032117c1540a",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock.h": "d8120a69ee0d942220eb4151ba541501df1aac95eab953e1e2468229ef76b8cd",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/cmock/src/cmock_internals.h": "c3861e410b3399a63a111ff6c25f20344c30f5230eb5eac9f06ffd63a7ec73f7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity.h": "5d8e2e8a0ae4b6e8a2dd55376a7b7064b3577e57ed6d58d3970aa18d5e954796",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/vendor/unity/src/unity_internals.h": "7c47a4ca1d74a8f190c4481682c9bb318da8f5d74c8fcff72d13ac5438846cd8"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game.out": {
+      "self_hash": "7c8847ef03b758e0c39dd7d46973f5aa6116efa80e2edc794a1a5c9b328124b9",
+      "meta_hash": "dd01b751231f1102e18906a8a250391557f481bbb1084fb4cbb2146423c327ee",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game.o": "21b080d332bf3a365e56419b789cea1a00688219015e6f54691b957d0396bf8e",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/game.o": "675405d3f2ca9167ccc34d26923dc29917c840cd76010c3810ac5a1d3109750f",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/mock_hardware.o": "0d66396328867b744d4b942c1efa4cb589eb3e5e3fb28b38161fe028ba7902b7",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game_runner.o": "d11de91782a75e37ab28032893e804cc1bafbed176c41ad023a705abd2ef0d49",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/unity.o": "c31f1190f5c39f84bb981e3a17935fb6c053f79dd377be685fb8a87ffa17379e",
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/cmock.o": "3783d64452f37e9c4a886c5c250ee9f5fd4816e6ee123bd0b7966dfa6e239fa1"
+      }
+    },
+    "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/results/test_game.fixture_run": {
+      "self_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "meta_hash": "52e4128d1dabd74dbcb4f16789ec44fd90e8d4e66053a9c2e9a5b87e822dbd58",
+      "deps": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/out/test_game/test_game.out": "7c8847ef03b758e0c39dd7d46973f5aa6116efa80e2edc794a1a5c9b328124b9"
+      },
+      "outputs": {
+        "C:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/build/test/results/test_game.pass": "5835dfa6be4ab41f9631ac14fa9bb71a50a9fef239f7057eb63e01cf1bfedbbf"
+      }
+    }
+  }
+}

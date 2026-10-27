@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All Tests (Ceedling)",
+      "type": "shell",
+      "command": "ceedling test:all",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Run Hardware Tests (Ceedling)",
+      "type": "shell",
+      "command": "ceedling test:test_hardware",
+      "group": "test",
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Run Game Tests (Ceedling)",
+      "type": "shell",
+      "command": "ceedling test:test_game",
+      "group": "test",
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Clean Ceedling Build",
+      "type": "shell",
+      "command": "ceedling clobber",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
