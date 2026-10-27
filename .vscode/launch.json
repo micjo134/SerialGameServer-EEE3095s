@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Src",
-      "program": "c:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/Src/build/Debug/outDebug",
+      "cwd": "c:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/tests",
+      "program": "c:/Users/mickey/STM32CubeIDE/workspace_1.19.0/Project/Core/tests/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
